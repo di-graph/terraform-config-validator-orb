@@ -2,17 +2,18 @@ description: >
   Execute 'terraform-config-validator/validate' step against a terraform plan JSON output file.
 
 parameters:
-  tf-plan-json-path:
-    type: string
-    description: "Terraform JSON Output format filepath"
   is-test-mode:
     type: boolean
     default: false
     description: "Whether to run in test mode. If set to true, just output terraform plan resource changes"
+  tf-plan-json-path:
+    type: string
+    description: "Terraform JSON Output format filepath"
 steps:
   - run:
       name: Run Digraph Terraform Plan Config Validator
       environment:
         TF_PLAN_JSON_PATH: <<parameters.tf-plan-json-path>>
         IS_TEST_MODE: <<parameters.is-test-mode>>
-      command: <<include(scripts/terraform_config_validator.py)>>
+      command: |
+        python ./src/scripts/terraform_config_validator.py
