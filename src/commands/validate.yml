@@ -12,8 +12,8 @@ parameters:
 steps:
   - run:
       name: Run Digraph Terraform Plan Config Validator
+      shell: /usr/bin/python3
       environment:
         TF_PLAN_JSON_PATH: <<parameters.tf-plan-json-path>>
         IS_TEST_MODE: <<parameters.is-test-mode>>
-      command: |
-        python ./src/scripts/terraform_config_validator.py
+      command: <<include(scripts/terraform_config_validator.py)>>
