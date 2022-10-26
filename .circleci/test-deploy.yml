@@ -37,14 +37,14 @@ workflows:
           filters: *filters
       - persist-workspace-with-plan-output:
           filters: *filters
-      - terraform-config-validator/validate:
-          filters: *filters
-          checkout: true
-          attach-workspace: true
-          workspace-path: /tmp
-          tf-plan-json-path: /tmp/dir/sample-digraph-tf-plan-output.json
-          requires:
-            - persist-workspace-with-plan-output
+      # - terraform-config-validator/validate:
+      #     filters: *filters
+      #     checkout: true
+      #     attach-workspace: true
+      #     workspace-path: /tmp
+      #     tf-plan-json-path: /tmp/dir/sample-digraph-tf-plan-output.json
+      #     requires:
+      #       - persist-workspace-with-plan-output
       - orb-tools/pack:
           filters: *filters
       - orb-tools/publish:
