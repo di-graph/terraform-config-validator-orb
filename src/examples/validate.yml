@@ -3,7 +3,7 @@ description: |
 usage:
   version: '2.1'
   orbs:
-    terraform-config-validator: di-graphterraform-config-validator@1.0.0
+    terraform-config-validator: di-graph/terraform-config-validator@1.0.0
   workflows:
     validate-terraform-plan:
       jobs:
