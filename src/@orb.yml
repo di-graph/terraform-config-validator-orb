@@ -1,7 +1,7 @@
 version: 2.1
 
 description: >
-  Digraph's Public Orb for validating terraform configurations.
+  Digraph's Public Orb for validating terraform configurations against 'terraform plan' output.
 
 display:
   home_url: "https://github.com/di-graph/terraform-config-validator-orb"
