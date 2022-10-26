@@ -1,0 +1,13 @@
+description: |
+  Run Di-graph's terraform-config-validator/validate command against a generated terraform plan JSON file
+usage:
+  version: '2.1'
+  orbs:
+    terraform-config-validator: di-graphterraform-config-validator@1.0.0
+  workflows:
+    validate-terraform-plan:
+      jobs:
+        - di-graph/terraform-config-validator:
+            attach-workspace: true
+            workspace-path: /tmp
+            tf-plan-json-path: "/tmp/dir/tf_plan_json.json"

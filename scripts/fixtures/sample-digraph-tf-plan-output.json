@@ -1,0 +1,591 @@
+{
+    "format_version": "1.1",
+    "terraform_version": "1.2.2",
+    "variables": {
+        "project_id": {
+            "value": "digraph-test"
+        },
+        "region": {
+            "value": "us-central1"
+        },
+        "zone": {
+            "value": "us-central1a"
+        }
+    },
+    "planned_values": {
+        "root_module": {
+            "resources": [
+                {
+                    "address": "google_storage_bucket.config-validator-cci-test-bucket",
+                    "mode": "managed",
+                    "type": "google_storage_bucket",
+                    "name": "config-validator-cci-test-bucket",
+                    "provider_name": "registry.terraform.io/hashicorp/google",
+                    "schema_version": 0,
+                    "values": {
+                        "cors": [],
+                        "default_event_based_hold": false,
+                        "encryption": [],
+                        "force_destroy": false,
+                        "id": "config-validator-cci-test-bucket",
+                        "labels": {},
+                        "lifecycle_rule": [
+                            {
+                                "action": [
+                                    {
+                                        "storage_class": "COLDLINE",
+                                        "type": "SetStorageClass"
+                                    }
+                                ],
+                                "condition": [
+                                    {
+                                        "age": 365,
+                                        "created_before": "",
+                                        "custom_time_before": "",
+                                        "days_since_custom_time": 0,
+                                        "days_since_noncurrent_time": 0,
+                                        "matches_storage_class": [],
+                                        "noncurrent_time_before": "",
+                                        "num_newer_versions": 0,
+                                        "with_state": "ANY"
+                                    }
+                                ]
+                            }
+                        ],
+                        "location": "US",
+                        "logging": [],
+                        "name": "config-validator-cci-test-bucket",
+                        "project": "digraph-2021",
+                        "requester_pays": false,
+                        "retention_policy": [
+                            {
+                                "is_locked": false,
+                                "retention_period": 2592000
+                            }
+                        ],
+                        "self_link": "https://www.googleapis.com/storage/v1/b/config-validator-cci-test-bucket",
+                        "storage_class": "STANDARD",
+                        "timeouts": null,
+                        "uniform_bucket_level_access": true,
+                        "url": "gs://config-validator-cci-test-bucket",
+                        "versioning": [],
+                        "website": []
+                    },
+                    "sensitive_values": {
+                        "cors": [],
+                        "encryption": [],
+                        "labels": {},
+                        "lifecycle_rule": [
+                            {
+                                "action": [
+                                    {}
+                                ],
+                                "condition": [
+                                    {
+                                        "matches_storage_class": []
+                                    }
+                                ]
+                            }
+                        ],
+                        "logging": [],
+                        "retention_policy": [
+                            {}
+                        ],
+                        "versioning": [],
+                        "website": []
+                    }
+                }
+            ]
+        }
+    },
+    "resource_drift": [
+        {
+            "address": "google_storage_bucket.config-validator-cci-test-bucket",
+            "mode": "managed",
+            "type": "google_storage_bucket",
+            "name": "config-validator-cci-test-bucket",
+            "provider_name": "registry.terraform.io/hashicorp/google",
+            "change": {
+                "actions": [
+                    "update"
+                ],
+                "before": {
+                    "cors": [],
+                    "default_event_based_hold": false,
+                    "encryption": [],
+                    "force_destroy": false,
+                    "id": "config-validator-cci-test-bucket",
+                    "labels": null,
+                    "lifecycle_rule": [
+                        {
+                            "action": [
+                                {
+                                    "storage_class": "COLDLINE",
+                                    "type": "SetStorageClass"
+                                }
+                            ],
+                            "condition": [
+                                {
+                                    "age": 365,
+                                    "created_before": "",
+                                    "custom_time_before": "",
+                                    "days_since_custom_time": 0,
+                                    "days_since_noncurrent_time": 0,
+                                    "matches_storage_class": [],
+                                    "noncurrent_time_before": "",
+                                    "num_newer_versions": 0,
+                                    "with_state": "ANY"
+                                }
+                            ]
+                        }
+                    ],
+                    "location": "US",
+                    "logging": [],
+                    "name": "config-validator-cci-test-bucket",
+                    "project": "digraph-2021",
+                    "requester_pays": false,
+                    "retention_policy": [
+                        {
+                            "is_locked": false,
+                            "retention_period": 2592000
+                        }
+                    ],
+                    "self_link": "https://www.googleapis.com/storage/v1/b/config-validator-cci-test-bucket",
+                    "storage_class": "STANDARD",
+                    "timeouts": null,
+                    "uniform_bucket_level_access": true,
+                    "url": "gs://config-validator-cci-test-bucket",
+                    "versioning": [],
+                    "website": []
+                },
+                "after": {
+                    "cors": [],
+                    "default_event_based_hold": false,
+                    "encryption": [],
+                    "force_destroy": false,
+                    "id": "config-validator-cci-test-bucket",
+                    "labels": {},
+                    "lifecycle_rule": [
+                        {
+                            "action": [
+                                {
+                                    "storage_class": "COLDLINE",
+                                    "type": "SetStorageClass"
+                                }
+                            ],
+                            "condition": [
+                                {
+                                    "age": 365,
+                                    "created_before": "",
+                                    "custom_time_before": "",
+                                    "days_since_custom_time": 0,
+                                    "days_since_noncurrent_time": 0,
+                                    "matches_storage_class": [],
+                                    "noncurrent_time_before": "",
+                                    "num_newer_versions": 0,
+                                    "with_state": "ANY"
+                                }
+                            ]
+                        }
+                    ],
+                    "location": "US",
+                    "logging": [],
+                    "name": "config-validator-cci-test-bucket",
+                    "project": "digraph-2021",
+                    "requester_pays": false,
+                    "retention_policy": [
+                        {
+                            "is_locked": false,
+                            "retention_period": 2592000
+                        }
+                    ],
+                    "self_link": "https://www.googleapis.com/storage/v1/b/config-validator-cci-test-bucket",
+                    "storage_class": "STANDARD",
+                    "timeouts": null,
+                    "uniform_bucket_level_access": true,
+                    "url": "gs://config-validator-cci-test-bucket",
+                    "versioning": [],
+                    "website": []
+                },
+                "after_unknown": {},
+                "before_sensitive": {
+                    "cors": [],
+                    "encryption": [],
+                    "lifecycle_rule": [
+                        {
+                            "action": [
+                                {}
+                            ],
+                            "condition": [
+                                {
+                                    "matches_storage_class": []
+                                }
+                            ]
+                        }
+                    ],
+                    "logging": [],
+                    "retention_policy": [
+                        {}
+                    ],
+                    "versioning": [],
+                    "website": []
+                },
+                "after_sensitive": {
+                    "cors": [],
+                    "encryption": [],
+                    "labels": {},
+                    "lifecycle_rule": [
+                        {
+                            "action": [
+                                {}
+                            ],
+                            "condition": [
+                                {
+                                    "matches_storage_class": []
+                                }
+                            ]
+                        }
+                    ],
+                    "logging": [],
+                    "retention_policy": [
+                        {}
+                    ],
+                    "versioning": [],
+                    "website": []
+                }
+            }
+        }
+    ],
+    "resource_changes": [
+        {
+            "address": "google_storage_bucket.config-validator-cci-test-bucket",
+            "mode": "managed",
+            "type": "google_storage_bucket",
+            "name": "config-validator-cci-test-bucket",
+            "provider_name": "registry.terraform.io/hashicorp/google",
+            "change": {
+                "actions": [
+                    "no-op"
+                ],
+                "before": {
+                    "cors": [],
+                    "default_event_based_hold": false,
+                    "encryption": [],
+                    "force_destroy": false,
+                    "id": "config-validator-cci-test-bucket",
+                    "labels": {},
+                    "lifecycle_rule": [
+                        {
+                            "action": [
+                                {
+                                    "storage_class": "COLDLINE",
+                                    "type": "SetStorageClass"
+                                }
+                            ],
+                            "condition": [
+                                {
+                                    "age": 365,
+                                    "created_before": "",
+                                    "custom_time_before": "",
+                                    "days_since_custom_time": 0,
+                                    "days_since_noncurrent_time": 0,
+                                    "matches_storage_class": [],
+                                    "noncurrent_time_before": "",
+                                    "num_newer_versions": 0,
+                                    "with_state": "ANY"
+                                }
+                            ]
+                        }
+                    ],
+                    "location": "US",
+                    "logging": [],
+                    "name": "config-validator-cci-test-bucket",
+                    "project": "digraph-2021",
+                    "requester_pays": false,
+                    "retention_policy": [
+                        {
+                            "is_locked": false,
+                            "retention_period": 2592000
+                        }
+                    ],
+                    "self_link": "https://www.googleapis.com/storage/v1/b/config-validator-cci-test-bucket",
+                    "storage_class": "STANDARD",
+                    "timeouts": null,
+                    "uniform_bucket_level_access": true,
+                    "url": "gs://config-validator-cci-test-bucket",
+                    "versioning": [],
+                    "website": []
+                },
+                "after": {
+                    "cors": [],
+                    "default_event_based_hold": false,
+                    "encryption": [],
+                    "force_destroy": false,
+                    "id": "config-validator-cci-test-bucket",
+                    "labels": {},
+                    "lifecycle_rule": [
+                        {
+                            "action": [
+                                {
+                                    "storage_class": "COLDLINE",
+                                    "type": "SetStorageClass"
+                                }
+                            ],
+                            "condition": [
+                                {
+                                    "age": 365,
+                                    "created_before": "",
+                                    "custom_time_before": "",
+                                    "days_since_custom_time": 0,
+                                    "days_since_noncurrent_time": 0,
+                                    "matches_storage_class": [],
+                                    "noncurrent_time_before": "",
+                                    "num_newer_versions": 0,
+                                    "with_state": "ANY"
+                                }
+                            ]
+                        }
+                    ],
+                    "location": "US",
+                    "logging": [],
+                    "name": "config-validator-cci-test-bucket",
+                    "project": "digraph-2021",
+                    "requester_pays": false,
+                    "retention_policy": [
+                        {
+                            "is_locked": false,
+                            "retention_period": 2592000
+                        }
+                    ],
+                    "self_link": "https://www.googleapis.com/storage/v1/b/config-validator-cci-test-bucket",
+                    "storage_class": "STANDARD",
+                    "timeouts": null,
+                    "uniform_bucket_level_access": true,
+                    "url": "gs://config-validator-cci-test-bucket",
+                    "versioning": [],
+                    "website": []
+                },
+                "after_unknown": {},
+                "before_sensitive": {
+                    "cors": [],
+                    "encryption": [],
+                    "labels": {},
+                    "lifecycle_rule": [
+                        {
+                            "action": [
+                                {}
+                            ],
+                            "condition": [
+                                {
+                                    "matches_storage_class": []
+                                }
+                            ]
+                        }
+                    ],
+                    "logging": [],
+                    "retention_policy": [
+                        {}
+                    ],
+                    "versioning": [],
+                    "website": []
+                },
+                "after_sensitive": {
+                    "cors": [],
+                    "encryption": [],
+                    "labels": {},
+                    "lifecycle_rule": [
+                        {
+                            "action": [
+                                {}
+                            ],
+                            "condition": [
+                                {
+                                    "matches_storage_class": []
+                                }
+                            ]
+                        }
+                    ],
+                    "logging": [],
+                    "retention_policy": [
+                        {}
+                    ],
+                    "versioning": [],
+                    "website": []
+                }
+            }
+        }
+    ],
+    "prior_state": {
+        "format_version": "1.0",
+        "terraform_version": "1.2.2",
+        "values": {
+            "root_module": {
+                "resources": [
+                    {
+                        "address": "google_storage_bucket.config-validator-cci-test-bucket",
+                        "mode": "managed",
+                        "type": "google_storage_bucket",
+                        "name": "config-validator-cci-test-bucket",
+                        "provider_name": "registry.terraform.io/hashicorp/google",
+                        "schema_version": 0,
+                        "values": {
+                            "cors": [],
+                            "default_event_based_hold": false,
+                            "encryption": [],
+                            "force_destroy": false,
+                            "id": "config-validator-cci-test-bucket",
+                            "labels": {},
+                            "lifecycle_rule": [
+                                {
+                                    "action": [
+                                        {
+                                            "storage_class": "COLDLINE",
+                                            "type": "SetStorageClass"
+                                        }
+                                    ],
+                                    "condition": [
+                                        {
+                                            "age": 365,
+                                            "created_before": "",
+                                            "custom_time_before": "",
+                                            "days_since_custom_time": 0,
+                                            "days_since_noncurrent_time": 0,
+                                            "matches_storage_class": [],
+                                            "noncurrent_time_before": "",
+                                            "num_newer_versions": 0,
+                                            "with_state": "ANY"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "location": "US",
+                            "logging": [],
+                            "name": "config-validator-cci-test-bucket",
+                            "project": "digraph-2021",
+                            "requester_pays": false,
+                            "retention_policy": [
+                                {
+                                    "is_locked": false,
+                                    "retention_period": 2592000
+                                }
+                            ],
+                            "self_link": "https://www.googleapis.com/storage/v1/b/config-validator-cci-test-bucket",
+                            "storage_class": "STANDARD",
+                            "timeouts": null,
+                            "uniform_bucket_level_access": true,
+                            "url": "gs://config-validator-cci-test-bucket",
+                            "versioning": [],
+                            "website": []
+                        },
+                        "sensitive_values": {
+                            "cors": [],
+                            "encryption": [],
+                            "labels": {},
+                            "lifecycle_rule": [
+                                {
+                                    "action": [
+                                        {}
+                                    ],
+                                    "condition": [
+                                        {
+                                            "matches_storage_class": []
+                                        }
+                                    ]
+                                }
+                            ],
+                            "logging": [],
+                            "retention_policy": [
+                                {}
+                            ],
+                            "versioning": [],
+                            "website": []
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "configuration": {
+        "provider_config": {
+            "google": {
+                "name": "google",
+                "full_name": "registry.terraform.io/hashicorp/google",
+                "version_constraint": "4.29.0",
+                "expressions": {
+                    "project": {
+                        "references": [
+                            "var.project_id"
+                        ]
+                    },
+                    "region": {
+                        "references": [
+                            "var.region"
+                        ]
+                    }
+                }
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "google_storage_bucket.config-validator-cci-test-bucket",
+                    "mode": "managed",
+                    "type": "google_storage_bucket",
+                    "name": "config-validator-cci-test-bucket",
+                    "provider_config_key": "google",
+                    "expressions": {
+                        "lifecycle_rule": [
+                            {
+                                "action": [
+                                    {
+                                        "storage_class": {
+                                            "constant_value": "COLDLINE"
+                                        },
+                                        "type": {
+                                            "constant_value": "SetStorageClass"
+                                        }
+                                    }
+                                ],
+                                "condition": [
+                                    {
+                                        "age": {
+                                            "constant_value": 365
+                                        }
+                                    }
+                                ]
+                            }
+                        ],
+                        "location": {
+                            "constant_value": "US"
+                        },
+                        "name": {
+                            "constant_value": "config-validator-cci-test-bucket"
+                        },
+                        "retention_policy": [
+                            {
+                                "retention_period": {
+                                    "constant_value": 2592000
+                                }
+                            }
+                        ],
+                        "uniform_bucket_level_access": {
+                            "constant_value": true
+                        }
+                    },
+                    "schema_version": 0
+                }
+            ],
+            "variables": {
+                "project_id": {
+                    "description": "project id"
+                },
+                "region": {
+                    "description": "region"
+                },
+                "zone": {
+                    "description": "zone"
+                }
+            }
+        }
+    }
+}
