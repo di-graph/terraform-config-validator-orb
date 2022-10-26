@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  terraform-config-validator: circleci/terraform-config-validator@dev:<<pipeline.git.revision>>
+  terraform-config-validator: di-graph/terraform-config-validator@dev:<<pipeline.git.revision>>
   orb-tools: circleci/orb-tools@11.1
   python: circleci/python@2.1
 
@@ -50,7 +50,7 @@ workflows:
       - orb-tools/publish:
           orb-name: di-graph/terraform-config-validator
           vcs-type: << pipeline.project.type >>
-          pub-type: dev
+          pub-type: production
           requires:
             - orb-tools/pack
             - persist-workspace-with-plan-output
