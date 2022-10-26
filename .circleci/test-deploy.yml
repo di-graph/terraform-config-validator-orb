@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  terraform-config-validator: di-graph/terraform-config-validator@dev:<<pipeline.git.revision>>
+  terraform-config-validator: circleci/terraform-config-validator@dev:<<pipeline.git.revision>>
   orb-tools: circleci/orb-tools@11.1
   python: circleci/python@2.1
 
