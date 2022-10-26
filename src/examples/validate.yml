@@ -1,5 +1,5 @@
 description: |
-  Run Di-graph's terraform-config-validator/validate command against a generated terraform plan JSON file
+  Run Digraph's terraform-config-validator/validate command against a generated terraform plan JSON file
 usage:
   version: '2.1'
   orbs:
