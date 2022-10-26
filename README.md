@@ -19,10 +19,6 @@ _**Edit this area to include a custom title and description.**_
 
 [CircleCI Orb Docs](https://circleci.com/docs/2.0/orb-intro/#section=configuration) - Docs for using, creating, and publishing CircleCI Orbs.
 
-### How to Contribute
-
-We welcome [issues](https://github.com/di-graph/terraform-config-validator-orb/issues) to and [pull requests](https://github.com/di-graph/terraform-config-validator-orb/pulls) against this repository!
-
 ### How to Publish An Update
 1. Merge pull requests with desired changes to the main branch.
     - For the best experience, squash-and-merge and use [Conventional Commit Messages](https://conventionalcommits.org/).

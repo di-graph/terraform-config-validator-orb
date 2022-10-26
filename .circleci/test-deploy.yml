@@ -2,36 +2,59 @@ version: 2.1
 orbs:
   terraform-config-validator: di-graph/terraform-config-validator@dev:<<pipeline.git.revision>>
   orb-tools: circleci/orb-tools@11.1
+  python: circleci/python@2.1
 
 filters: &filters
   tags:
     only: /.*/
 
 jobs:
-  # Create a job to test the commands of your orbs.
-  # You may want to add additional validation steps to ensure the commands are working as expected.
-  command-tests:
-    docker:
-      - image: cimg/base:current
+  test-terraform-config-validator-with-is-test-mode:
+    executor: python/default
     steps:
       - checkout
-      # Run your orb's commands to validate them.
-      - terraform-config-validator/greet
+      - terraform-config-validator/validate:
+          is-test-mode: true
+          tf-plan-json-path: src/scripts/fixtures/sample-digraph-tf-plan-output.json
+  persist-workspace-with-plan-output:
+    machine:
+      image: ubuntu-2204:2022.07.1
+    steps:
+      - checkout
+      - run:
+          command: mkdir -p /tmp/dir
+      - run:
+          command: cp src/scripts/fixtures/sample-digraph-tf-plan-output.json /tmp/dir/sample-digraph-tf-plan-output.json
+      - persist_to_workspace:
+          root: /tmp
+          paths:
+            - dir
+
 workflows:
   test-deploy:
     jobs:
-      # Make sure to include "filters: *filters" in every test job you want to run as part of your deployment.
-      - command-tests:
+      - test-terraform-config-validator-with-is-test-mode:
           filters: *filters
+      - persist-workspace-with-plan-output:
+          filters: *filters
+      # - terraform-config-validator/validate:
+      #     filters: *filters
+      #     checkout: true
+      #     attach-workspace: true
+      #     workspace-path: /tmp
+      #     tf-plan-json-path: /tmp/dir/sample-digraph-tf-plan-output.json
+      #     requires:
+      #       - persist-workspace-with-plan-output
       - orb-tools/pack:
           filters: *filters
       - orb-tools/publish:
           orb-name: di-graph/terraform-config-validator
           vcs-type: << pipeline.project.type >>
-          pub-type: production
+          pub-type: dev
           requires:
             - orb-tools/pack
-            - command-tests
+            - persist-workspace-with-plan-output
+            - test-terraform-config-validator-with-is-test-mode
           context: orb-publishing
           filters:
             branches:
