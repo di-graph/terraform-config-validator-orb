@@ -15,5 +15,4 @@ steps:
       environment:
         TF_PLAN_JSON_PATH: <<parameters.tf-plan-json-path>>
         IS_TEST_MODE: <<parameters.is-test-mode>>
-      command: |
-        python ./src/scripts/terraform_config_validator.py
+      command: python <<include(scripts/terraform_config_validator.py)>>
