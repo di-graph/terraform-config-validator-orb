@@ -5,7 +5,7 @@ from urllib import request
 from urllib.error import HTTPError
 
 API_KEY = os.getenv("DIGRAPH_API_KEY")
-IS_TEST_MODE = os.getenv("IS_TEST_MODE")
+TEST_MODE = os.getenv("TEST_MODE")
 ORGANIZATION = os.getenv("CIRCLE_PROJECT_USERNAME")
 REPOSITORY = os.getenv("CIRCLE_PROJECT_REPONAME")
 TF_PLAN_JSON_PATH = os.getenv("TF_PLAN_JSON_PATH")
@@ -32,7 +32,7 @@ def main():
             actual_changes.append(rc)
 
     parsed_json_plan = {"resource_changes": actual_changes}
-    if IS_TEST_MODE == "1":
+    if TEST_MODE == "1":
         print(
             f"TEST MODE: Terraform Plan resource_changes are {resource_changes}. Exiting..."
         )

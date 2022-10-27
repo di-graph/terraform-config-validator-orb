@@ -2,7 +2,7 @@ description: >
   Execute 'terraform-config-validator/validate' step against a terraform plan JSON output file.
 
 parameters:
-  is-test-mode:
+  test-mode:
     type: boolean
     default: false
     description: "Whether to run in test mode. If set to true, just output terraform plan resource changes"
@@ -15,5 +15,5 @@ steps:
       shell: /usr/bin/python3
       environment:
         TF_PLAN_JSON_PATH: <<parameters.tf-plan-json-path>>
-        IS_TEST_MODE: <<parameters.is-test-mode>>
+        TEST_MODE: <<parameters.test-mode>>
       command: <<include(scripts/terraform_config_validator.py)>>
