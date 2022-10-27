@@ -9,12 +9,12 @@ filters: &filters
     only: /.*/
 
 jobs:
-  test-terraform-config-validator-with-is-test-mode:
+  test-terraform-config-validator-with-test-mode:
     executor: python/default
     steps:
       - checkout
       - terraform-config-validator/validate:
-          is-test-mode: true
+          test-mode: true
           tf-plan-json-path: src/scripts/fixtures/sample-digraph-tf-plan-output.json
   persist-workspace-with-plan-output:
     machine:
@@ -33,7 +33,7 @@ jobs:
 workflows:
   test-deploy:
     jobs:
-      - test-terraform-config-validator-with-is-test-mode:
+      - test-terraform-config-validator-with-test-mode:
           filters: *filters
       - persist-workspace-with-plan-output:
           filters: *filters
@@ -54,7 +54,7 @@ workflows:
           requires:
             - orb-tools/pack
             - persist-workspace-with-plan-output
-            - test-terraform-config-validator-with-is-test-mode
+            - test-terraform-config-validator-with-test-mode
           context: orb-publishing
           filters:
             branches:

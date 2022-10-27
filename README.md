@@ -3,9 +3,7 @@
 
 [![CircleCI Build Status](https://circleci.com/gh/di-graph/terraform-config-validator-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/di-graph/terraform-config-validator-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/di-graph/terraform-config-validator.svg)](https://circleci.com/orbs/registry/orb/di-graph/terraform-config-validator) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/di-graph/terraform-config-validator-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
-Run the Terraform Config Validator in your CircleCI Pipelines with the `di-graph/terraform-config-validator` Orb.
-
-View the [usage examples](https://circleci.com/developer/orbs/orb/di-graph/terraform-config-validator#usage-examples).
+Run the Terraform Config Validator in your CircleCI Pipelines with the `di-graph/terraform-config-validator` Orb. View our [usage examples](https://circleci.com/developer/orbs/orb/di-graph/terraform-config-validator#usage-examples).
 ## Resources
 
 [CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/di-graph/terraform-config-validator) - The official registry page of this orb for all versions, executors, commands, and jobs described.

@@ -17,7 +17,7 @@ parameters:
     type: boolean
     default: false
     description: "Perform checkout as first step in job."
-  is-test-mode:
+  test-mode:
     type: boolean
     default: false
     description: "Whether to run in test mode. If set to true, just output terraform plan resource changes"
@@ -35,5 +35,5 @@ steps:
         - attach_workspace:
             at: << parameters.workspace-path >>
   - validate:
-      is-test-mode: << parameters.is-test-mode >>
+      test-mode: << parameters.test-mode >>
       tf-plan-json-path: << parameters.tf-plan-json-path >>
